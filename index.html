@@ -77,13 +77,17 @@
             padding-bottom: 12px;
         }
 
-        /* p5.js 작품 표시 */
+        /* p5.js 작품 표시 - 사이즈 및 비율 최적화 수정 */
         iframe {
             width: 100%;
-            height: 500px;
+            /* 고정 높이(500px) 대신 4:3 또는 이미지에 맞춘 비율로 설정하여 여백 제거 */
+            aspect-ratio: 4 / 3; 
+            height: auto;
             border: none;
             border-radius: 10px;
             background-color: #ffffff;
+            /* 내부 캔버스가 부모 영역을 벗어나지 않고 가득 차도록 유도 */
+            display: block;
         }
 
         /* 모바일 */
