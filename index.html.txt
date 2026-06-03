@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js 작품 모음</title>
+
+    <style>
+        /* 전체 페이지 */
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 헤더 */
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        header h1 {
+            color: #111827;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* 작품 그리드 */
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        /* 작품 카드 */
+        .project {
+            background-color: #d1d5db; /* 카드 색 더 진하게 */
+            border: 1px solid #9ca3af;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #6b7280;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        /* 작품 제목 */
+        .project-title {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #111827;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            border-bottom: 2px solid #9ca3af;
+            padding-bottom: 12px;
+        }
+
+        /* [정답 수정] 600x400 캔버스를 여백 없이 감싸는 컨테이너 */
+        .iframe-wrapper {
+            width: 100%;
+            max-width: 600px; /* 캔버스 원본 가로 크기 제한 */
+            margin: 0 auto;   /* 카드 중앙 정렬 */
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden; /* 내부 여백 빠져나가지 못하게 차단 */
+            line-height: 0;   /* 아주 중요: 하단 유령 공백(4px) 제거 */
+        }
+
+        /* [정답 수정] iframe 스타일 */
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;    /* p5.js의 세로 크기와 정확히 일치 */
+            border: none;
+            display: block;   /* 인라인 요소 특성의 하단 공백 제거 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 모바일 및 태블릿 대응 */
+        @media (max-width: 1300px) {
+            #projects {
+                grid-template-columns: 1fr; /* 화면이 작아지면 1열로 배치하여 600px 공간 확보 */
+                max-width: 650px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Creative Coding Portfolio</h1>
+        <p>p5.js를 활용하여 제작한 정적·동적 그래픽 과제 작품 모음입니다.</p>
+    </header>
+
+    <section id="projects">
+
+        <div class="project">
+            <div class="project-title">과제 1 : 정적작품 (프로젝트 1_나만의 추상화 그리기)</div>
+            <div class="iframe-wrapper">
+                <iframe src="sample1/index.html" scrolling="no"></iframe>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">과제 4 : 동적 작품 (추상화에 움직임을 더하기)</div>
+            <div class="iframe-wrapper">
+                <iframe src="sample4/index.html" scrolling="no"></iframe>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">과제 2 : 정적 작품 (나만의 캐릭커쳐 그리기)</div>
+            <div class="iframe-wrapper">
+                <iframe src="sample2/index.html" scrolling="no"></iframe>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">과제 3 : 동적 작품 (캐릭커쳐에 움직임을 더하기)</div>
+            <div class="iframe-wrapper">
+                <iframe src="sample3/index.html" scrolling="no"></iframe>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
